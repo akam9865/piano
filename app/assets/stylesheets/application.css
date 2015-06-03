@@ -13,3 +13,112 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+	background: rgba(0, 0, 0, 0.3);
+}
+
+.view {
+	width: 1000px;
+	margin: 0 auto;
+	margin-top: 100px;
+}
+
+.organ {
+	background: black;
+	width: 442px;
+	padding: 3px 45px 2px 45px;
+	height: 180px;
+	float: left;
+}
+
+.keyboard {
+	position: relative;
+	height: 180px;
+	float: left;
+	border-right: 2px solid black;
+}
+
+.key.white {
+	height: 100%;
+	width: 40px;
+	border: 2px solid black;
+	border-top: 1px solid black;
+	border-right: none;
+	display: inline-block;
+	box-sizing: border-box;
+	border-radius: 0 0 4px 4px;
+	vertical-align: top;
+	background: white;
+	transition: height, background 0.1s;
+}
+
+
+.key.white.pressed {
+	background: #e5e5e5;
+	height: 181px;
+	border-right: 1px solid black;
+	border-left: 3px solid black;
+	transition: border-left, border-right, height, background 0.1s;
+	border-radius: 0 0 6px 6px;
+}
+
+.key.black {
+	display: inline-block;
+	height: 110px;
+	width: 20px;
+	background: linear-gradient(to right, black, black 60%, grey, black);
+	position: absolute;
+	border: 1px solid black;
+	border-bottom: 3px solid black;
+	box-sizing: border-box;
+	top: 0;
+	margin-left: -10px;
+	border-radius: 0 0 2px 2px;
+	transition: border-radius 0.1s;
+}
+
+.key.black.pressed .bottom {
+	top: 92px;
+	border-radius: 0 0 5px 5px;
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+	transition: height 0.1s;
+}
+
+.key.black .bottom {
+	height: 15px;
+	top: 93px;
+	position: relative;
+	transition: height 0.1s;
+	background: linear-gradient(black, grey 60%, grey, black);
+}
+
+
+.staff {
+	height: 80px;
+	width: 450px;
+	background: white;
+	float: right;
+	position: relative;
+	border-bottom: 1px solid black;
+}
+
+.row {
+	height: 25%;
+	width: 100%;
+	border: 1px solid black;
+	border-bottom: none;
+	box-sizing: border-box;
+}
+
+.note {
+	position: absolute;
+	height: 80px;
+	width: auto;
+}
+
+.clef {
+	position: absolute;
+	top: -16px;
+}
