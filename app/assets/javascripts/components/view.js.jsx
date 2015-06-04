@@ -2,11 +2,13 @@ var View = React.createClass({
 
   render: function() {
     return (
-			<div className="view">
+			<div>
+				<div className="view">
 				
-				<Organ />
-				<Staff />
-			
+					<Organ />
+					<Staff />
+				</div>
+				<Recorder />
 			</div>
 		);
   }

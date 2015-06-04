@@ -21,6 +21,7 @@ body {
 .view {
 	width: 1000px;
 	margin: 0 auto;
+	height: 200px;
 	margin-top: 100px;
 }
 
@@ -122,3 +123,5 @@ body {
 	position: absolute;
 	top: -16px;
 }
+
+.record {}
