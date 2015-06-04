@@ -1,19 +1,18 @@
 (function () {
 	
-	window.Track = function (name, roll) {
-		this.name = name;
+	window.Track = function (title, roll) {
+		this.title = title;
 		this.roll = roll || [];
 	};
 	
 	Track.prototype = {
-		
 		record: function () {
 			this.roll = [];
 			this.startTime = Date.now();
 		},
 		
 		stop: function () {
-			return this.roll;
+			this.roll = [];
 		},
 		
 		play: function () {
@@ -21,15 +20,12 @@
 			var step = 0;
 			var rollIndex = 0;
 			var roll = this.roll;
-			
+
 			var interval = setInterval(function () {
 				var time = step * 10;
 				
 				if (roll[rollIndex].time < time) {
-					playing.diff(roll[rollIndex].notes).forEach(function (note) { note.stop(); });
-					roll[rollIndex].notes.diff(playing).forEach(function (note) { note.start(); });
-					
-					playing = roll[rollIndex].notes;
+					KeyActions.setKeys(roll[rollIndex].notes);
 					rollIndex++;
 				}
 				
@@ -44,15 +40,9 @@
 		
 		addNotes: function (notes) {
 			var time = Date.now() - this.startTime;
-
-			notes = notes.map(function (note) { return new Note(Tones[note]); })
 			this.roll.push({ notes: notes, time: time });
+			// REFACTOR: have the integer time point to notes;
 		}
 		
-	};
-	
-	Array.prototype.diff = function (arr) {
-		return this.filter(function (i) { return arr.indexOf(i) < 0; })
-	};
-	
+	};	
 })();

@@ -10,6 +10,10 @@
 		_keys.splice(_keys.indexOf(key), 1);
 	};
 	
+	var setKeys = function (keys) {
+		_keys = keys;
+	};
+	
 	root.KeyStore = $.extend({}, EventEmitter.prototype, {
 		
 		addChangeListener: function (callback) {
@@ -34,6 +38,11 @@
 					
 				case KeyConstants.RELEASE_KEY:
 					removeKey(payload.key);
+					KeyStore.emit("CHANGE");
+					break;
+					
+				case KeyConstants.SET_KEYS:
+					setKeys(payload.keys);
 					KeyStore.emit("CHANGE");
 					break;
 			};

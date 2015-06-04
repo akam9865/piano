@@ -9,6 +9,7 @@ var View = React.createClass({
 					<Staff />
 				</div>
 				<Recorder />
+				<Jukebox />
 			</div>
 		);
   }

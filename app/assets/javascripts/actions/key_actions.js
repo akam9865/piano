@@ -11,5 +11,12 @@ window.KeyActions = {
 			actionType: KeyConstants.RELEASE_KEY,
 			key: key
 		});
+	},
+	
+	setKeys: function (keys) {
+		AppDispatcher.dispatch({
+			actionType: KeyConstants.SET_KEYS,
+			keys: keys
+		});
 	}
-}
+};

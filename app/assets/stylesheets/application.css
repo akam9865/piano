@@ -124,4 +124,17 @@ body {
 	top: -16px;
 }
 
-.record {}
+.record {
+	margin: 10px;
+}
+	
+.jukebox {
+	height: 150px;
+	width: 250px;
+	background: white;
+	padding: 10px;
+}
+
+.track-player button {
+	float: right;
+}

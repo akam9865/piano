@@ -23,10 +23,7 @@ var pressed = {};
 
 var keydown = function (e) {
 	var keyCode = e.keyCode;
-
-	if (pressed[keyCode]) {
-		return;
-	}
+	if (pressed[keyCode] || e.target.tagName === "INPUT") return;
 	
 	if (keyCode in KEYS) {
 		KeyActions.pressKey(KEYS[keyCode]);
@@ -35,6 +32,7 @@ var keydown = function (e) {
 };
 
 var keyup = function (e) {
+	if (e.target.tagName === "INPUT") return;
 	var keyCode = e.keyCode;
 	
 	if (keyCode in KEYS) {
