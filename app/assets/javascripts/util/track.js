@@ -1,8 +1,9 @@
 (function () {
 	
-	window.Track = function (title, roll) {
+	window.Track = function (title, roll, id) {
 		this.title = title;
 		this.roll = roll || [];
+		this.id = id;
 	};
 	
 	Track.prototype = {
@@ -43,6 +44,5 @@
 			this.roll.push({ notes: notes, time: time });
 			// REFACTOR: have the integer time point to notes;
 		}
-		
 	};	
 })();

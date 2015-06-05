@@ -2,9 +2,10 @@ var Jukebox = React.createClass({
 	getInitialState: function () {
 		return {tracks: []};
 	},
-	
+
 	componentDidMount: function () {
 		TrackStore.addChangeListener(this.setTracks);
+		ApiUtil.fetchTracks();
 	},
 	
 	setTracks: function () {
@@ -15,11 +16,11 @@ var Jukebox = React.createClass({
     return (
 		
 			<div className="jukebox">
-				{this.state.tracks.map(function (track, id) {
-
-					return <TrackPlayer key={id} track={ track } />
-					
+			
+				{this.state.tracks.map(function (track) {
+					return <TrackPlayer key={ track.id } track={ track } />	
 				})}
+				
 			</div>
 		
 		);

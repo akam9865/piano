@@ -10,8 +10,10 @@
 		_tracks = tracks;
 	};
 	
-	var removeTrack = function (track) {
-		_tracks.splice(_tracks.indexOf(track), 1);
+	var removeTrack = function (track) {		
+		_tracks = _tracks.filter(function (t) {
+			return t.id !== track.id;
+		});
 	};
 	
 	root.TrackStore = $.extend({}, EventEmitter.prototype, {

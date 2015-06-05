@@ -16,7 +16,9 @@ window.TrackActions = {
 	receiveAll: function (tracks) {
 		AppDispatcher.dispatch({
 			actionType: TrackConstants.TRACKS_RECEIVED,
-			tracks: tracks.map(function (track) { return new Track(track.title, track.roll ); } )
+			tracks: tracks.map(function (track) {
+				return new Track(track.title, track.roll, track.id);
+			} )
 		});
 	}
 }

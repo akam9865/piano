@@ -1,13 +1,10 @@
-var TrackPlayer = React.createClass({
-	componentDidMount: function () {		
-	},
-	
+var TrackPlayer = React.createClass({	
 	play: function () {
 		this.props.track.play();
 	},
 	
 	delete: function () {
-		TrackActions.deleteTrack(this.props.track);
+		ApiUtil.deleteTrack(this.props.track);
 	},
 
   render: function() {
