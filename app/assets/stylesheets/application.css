@@ -124,8 +124,9 @@ body {
 	top: -16px;
 }
 
-.record {
-	margin: 10px;
+.record, .jukebox {
+	
+	margin: 10px 0 10px 100px;
 }
 	
 .jukebox {

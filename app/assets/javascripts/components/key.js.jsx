@@ -22,13 +22,17 @@ var Key = React.createClass({
 	},
 	
 	play: function () {
-		this.note.start()
-		this.setState({ pressed: true });
+		// this.note.start()
+		// this.setState({ pressed: true });
+		
+		KeyActions.pressKey(this.props.noteName);
 	},
 	
 	stop: function () {
-		this.note.stop();
-		this.setState({ pressed: false });
+		// this.note.stop();
+		// this.setState({ pressed: false });
+		
+		KeyActions.releaseKey(this.props.noteName);
 	},
 
   render: function() {
